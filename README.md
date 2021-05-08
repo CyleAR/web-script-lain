@@ -1,0 +1,2 @@
+# webscriptlain
+Webscript for LainTSX
