@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LainTSX Korean Subtitle
 // @namespace    http://cyle.xyz
-// @version      0.96
+// @version      0.97
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
