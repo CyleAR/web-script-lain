@@ -13,6 +13,6 @@ web script lain은 1999년에 출시한 serial experiments Lain의 PS1 게임을
 <p align="center">
   <img src="Screenshots/1.png" width="49%">
   <img src="Screenshots/3.png" width="49%">
-  <img src="Screenshots/2.png" width="49%">
   <img src="Screenshots/4.png" width="49%">
+  <img src="Screenshots/2.png" width="49%">
 </p>
