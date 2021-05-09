@@ -9,7 +9,7 @@
 // @grant        GM_addStyle
 // ==/UserScript==
 
-GM_addStyle ( "@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);" );
+GM_addStyle ( "@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);" );
 GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
@@ -40,11 +40,6 @@ function waitTrackSrc()
     }, 100);
 }
 
-function loadCSS(){
-
-}
-
-
 (function() {
     function scanner(){
         //console.log("F scanner Started");
@@ -71,6 +66,5 @@ function loadCSS(){
         },100)
     }
 
-    loadCSS();
     start();
 })();
