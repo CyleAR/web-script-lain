@@ -9,7 +9,7 @@ web script lain은 1999년에 출시한 serial experiments Lain의 PS1 게임을
 * [Karuhaku](https://twitter.com/karuhaku) 및 그 외 - 번역 및 감수
 * [lelenium](https://github.com/lelenium) - vtt 자막 제공
 
-### Screenshots
+## Screenshots
 <p align="center">
   <img src="Screenshots/1.png" width="49%">
   <img src="Screenshots/3.png" width="49%">
