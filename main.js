@@ -14,31 +14,30 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
-const languages = {
-    Korean : 'ko',
-    French : 'fr',
-    Greek : 'pl',
-    English : 'en',
-    Portuguese : 'pt-BR',
-    Polish : 'pl',
-    Italian : 'it',
-    Greek : 'el',
-    Spanish : 'es-ES',
-    Ukrainian : 'uk',
-    German : 'de',
-    Japanese : 'ja',
-    Romanian : 'ro'
-}
+const languages = new Map([
+    ['Korean', 'ko'],
+    ['French', 'fr'],
+    ['English', 'en'],
+    ['Portuguese', 'pt-BR'],
+    ['Polish', 'pl'],
+    ['Italian', 'it'],
+    ['Greek', 'el'],
+    ['Spanish', 'es-ES'],
+    ['Ukrainian', 'uk'],
+    ['German', 'de'],
+    ['Japanese', 'ja'],
+    ['Romanian', 'ro']
+])
+var currentLang = 'ko';
 
 function replaceVTT()
 {
+    //let lang = languageChecker();
     document.querySelector('#media').crossOrigin = 'anonymous';
     const trackName = document.querySelector('#track').src.substr(37,).split(`.`)[0]
     const trackPrefix = trackName.replace(/[0-9]/g,'');
-    let newVTT = vttLink + languages.Korean +trackPrefix + '/' + trackName + '.vtt';
+    let newVTT = vttLink + currentLang + '/' + trackPrefix + '/' + trackName + '.vtt';
     document.querySelector("#track").src = newVTT;
-    //document.querySelector("#subtitle").style.fontFamily = "nanum gothic";
-    //document.querySelector("#subtitle").style.fontSize = '28px';
     return;
 }
 
@@ -54,6 +53,45 @@ function waitTrackSrc()
                 return;
             }
         }catch{clearInterval(waitTrack)}
+    }, 100);
+}
+
+function addButtons(div){
+    languages.forEach((value, key)=>{
+        let button = document.createElement('button');
+        let addButtons = () => {
+            button.id = value;
+            button.style.position = 'relative';
+            button.style.height = '48px';
+            button.innerText = key;
+            button.onclick = function(event){
+                currentLang = value;
+                alert('Language changed to ' + key);
+            };
+        }
+        addButtons();
+        div.appendChild(button);
+    })
+    return;
+}
+
+function createUI(){
+    let target = document.querySelector('#root > div.game');
+    target.style.overflow = 'visible';
+    let langDiv = document.createElement('div');
+    let addDiv = () =>{
+        langDiv.className = 'languages';
+        langDiv.style.height = '48px';
+        langDiv.style.marginTop = '-48px';
+    }
+    let UIScanner = setInterval(() => {
+        if(target){
+            clearInterval(UIScanner);
+            target.prepend(langDiv);
+            addDiv();
+            addButtons(langDiv);
+            return;
+        }
     }, 100);
 }
 
@@ -83,5 +121,6 @@ function waitTrackSrc()
         },100)
     }
 
+    createUI()
     startFirstScan();
 })();
