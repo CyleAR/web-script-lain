@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LainTSX Korean Subtitle
 // @namespace    http://cyle.xyz
-// @version      0.99
+// @version      1.01
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -14,7 +14,7 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
-const flagLink = ;
+const flagLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/miscs/';
 const languages = new Map([
     ['Korean', 'ko'],
     ['French', 'fr'],
@@ -62,19 +62,34 @@ function addButtons(div){
         let button = document.createElement('button');
         let addButtons = () => {
             button.id = value;
-            button.style.position = 'relative';
-            button.style.height = '48px';
+            button.style.background = 'none';
+            button.style.border = 'none';
+            button.style.borderRadius = '10px';
             button.innerText = key;
-            button.innerHTML = `<img src="miscs/${key}">`
+            button.innerHTML = `<img src="${flagLink + key + '.png'}">`
             button.onclick = function(event){
+                button.style.backgroundColor = 'white';
                 currentLang = value;
-                alert('Language changed to ' + key);
+                alert('Language changed into ' + key);
             };
         }
         addButtons();
         div.appendChild(button);
     })
     return;
+}
+
+function currentLangScanner(){ //key : Korean, value : ko
+    let target = document.querySelector('#ko');
+    target.style.background = 'white';
+    setInterval(()=>{
+        languages.forEach((value,key)=>{
+            let target = document.querySelector('#' + value);
+            if(value !== currentLang){
+                target.style.background = 'none';
+            }
+        })
+    },500)
 }
 
 function createUI(){
@@ -92,6 +107,7 @@ function createUI(){
             target.prepend(langDiv);
             addDiv();
             addButtons(langDiv);
+            currentLangScanner();
             return;
         }
     }, 100);
