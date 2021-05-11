@@ -8,6 +8,7 @@ web script lain은 1998년에 출시한 serial experiments lain의 PS1 게임을
 ## Credits
 * [Karuhaku](https://twitter.com/karuhaku) 및 그 외 - 번역 및 감수
 * [lelenium](https://github.com/lelenium) - vtt 자막 제공
+* [번역 프로젝트](https://crowdin.com/project/lain-psx)에 참여해준 모두 - 다국어 번역 제공
 
 ## Screenshots
 <p align="center">
