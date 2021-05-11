@@ -14,15 +14,28 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
-const 
-var checkLang;
+const languages = {
+    Korean : 'ko',
+    French : 'fr',
+    Greek : 'pl',
+    English : 'en',
+    Portuguese : 'pt-BR',
+    Polish : 'pl',
+    Italian : 'it',
+    Greek : 'el',
+    Spanish : 'es-ES',
+    Ukrainian : 'uk',
+    German : 'de',
+    Japanese : 'ja',
+    Romanian : 'ro'
+}
 
 function replaceVTT()
 {
     document.querySelector('#media').crossOrigin = 'anonymous';
     const trackName = document.querySelector('#track').src.substr(37,).split(`.`)[0]
     const trackPrefix = trackName.replace(/[0-9]/g,'');
-    let newVTT = vttLink + checkLang +trackPrefix + '/' + trackName + '.vtt';
+    let newVTT = vttLink + languages.Korean +trackPrefix + '/' + trackName + '.vtt';
     document.querySelector("#track").src = newVTT;
     //document.querySelector("#subtitle").style.fontFamily = "nanum gothic";
     //document.querySelector("#subtitle").style.fontSize = '28px';
