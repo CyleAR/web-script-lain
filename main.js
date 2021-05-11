@@ -14,6 +14,7 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
+const flagLink = ;
 const languages = new Map([
     ['Korean', 'ko'],
     ['French', 'fr'],
@@ -64,6 +65,7 @@ function addButtons(div){
             button.style.position = 'relative';
             button.style.height = '48px';
             button.innerText = key;
+            button.innerHTML = `<img src="miscs/${key}">`
             button.onclick = function(event){
                 currentLang = value;
                 alert('Language changed to ' + key);
