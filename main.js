@@ -105,8 +105,6 @@ function currentLangScanner(){ //key : Korean, value : ko
 }
 
 function createUI(){
-    let target = document.querySelector('#root > div.game');
-    target.style.overflow = 'visible';
     let langDiv = document.createElement('div');
     let addDiv = () =>{
         langDiv.className = 'languages';
@@ -115,7 +113,9 @@ function createUI(){
         langDiv.style.marginTop = '-48px';
     }
     let UIScanner = setInterval(() => {
+        let target = document.querySelector('#root > div.game');
         if(target){
+            target.style.overflow = 'visible';
             clearInterval(UIScanner);
             target.prepend(langDiv);
             addDiv();
