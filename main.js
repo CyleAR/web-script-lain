@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         LainTSX Korean Subtitle
+// @name         Web Script Lain
 // @namespace    http://cyle.xyz
 // @version      1.02
 // @description  Make me sad. Make me mad. Make me feel alright?
