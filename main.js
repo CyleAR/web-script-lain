@@ -14,6 +14,7 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
+const clareLink = 'https://raw.githubusercontent.com/nvfclaire/translain/tree/master/Translations'
 const flagLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/miscs/';
 const languages = new Map([
     ['Korean', 'ko'],
@@ -27,7 +28,8 @@ const languages = new Map([
     ['Ukrainian', 'uk'],
     ['German', 'de'],
     ['Japanese', 'ja'],
-    ['Romanian', 'ro']
+    ['Romanian', 'ro'],
+    ['Clare', 'cl']
 ])
 var currentLang = 'ko';
 
@@ -38,6 +40,9 @@ function replaceVTT()
     const trackName = document.querySelector('#track').src.substr(37,).split(`.`)[0]
     const trackPrefix = trackName.replace(/[0-9]/g,'');
     let newVTT = vttLink + currentLang + '/' + trackPrefix + '/' + trackName + '.vtt';
+    if(currentLang == 'cl'){
+        newVTT = clareLink + currentLang + '/' + trackPrefix + '/' + trackName + '.vtt'; 
+    }
     document.querySelector("#track").src = newVTT;
     return;
 }
@@ -70,7 +75,12 @@ function addButtons(div){
             button.onclick = function(event){
                 button.style.backgroundColor = 'white';
                 currentLang = value;
-                alert('Language changed into ' + key);
+                if(value == 'cl'){
+                    alert('Warning');
+                }else{
+                    alert('Language changed into ' + key);
+                }
+               
             };
         }
         addButtons();
