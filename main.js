@@ -14,7 +14,7 @@ GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
 GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
-const clareLink = 'https://raw.githubusercontent.com/nvfclaire/translain/tree/master/Translations'
+const clareLink = 'https://raw.githubusercontent.com/nvfclaire/translain/master/Translations/'
 const flagLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/miscs/';
 const languages = new Map([
     ['Korean', 'ko'],
@@ -38,10 +38,12 @@ function replaceVTT()
     //let lang = languageChecker();
     document.querySelector('#media').crossOrigin = 'anonymous';
     const trackName = document.querySelector('#track').src.substr(37,).split(`.`)[0]
-    const trackPrefix = trackName.replace(/[0-9]/g,'');
-    let newVTT = vttLink + currentLang + '/' + trackPrefix + '/' + trackName + '.vtt';
+    const trackType = trackName.replace(/[0-9]/g,'');
+    let newVTT = vttLink + currentLang + '/' + trackType + '/' + trackName + '.vtt';
     if(currentLang == 'cl'){
-        newVTT = clareLink + currentLang + '/' + trackPrefix + '/' + trackName + '.vtt'; 
+        newVTT = clareLink + currentLang + '/' + trackType + '/' + trackName + '.vtt'; 
+    }else if(!currentLang == 'en'){
+        
     }
     document.querySelector("#track").src = newVTT;
     return;
@@ -76,7 +78,7 @@ function addButtons(div){
                 button.style.backgroundColor = 'white';
                 currentLang = value;
                 if(value == 'cl'){
-                    alert('Warning');
+                    alert(`Note: This English translation is from Clare's new translation - Translain.\n It's a work in progress and incomplete`);
                 }else{
                     alert('Language changed into ' + key);
                 }
@@ -109,6 +111,7 @@ function createUI(){
     let addDiv = () =>{
         langDiv.className = 'languages';
         langDiv.style.height = '48px';
+        langDiv.style.width = '720px'
         langDiv.style.marginTop = '-48px';
     }
     let UIScanner = setInterval(() => {
