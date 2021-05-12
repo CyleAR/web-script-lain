@@ -31,7 +31,7 @@ const languages = new Map([
     ['Romanian', 'ro'],
     ['Clare', 'cl']
 ])
-var currentLang = 'ko';
+var currentLang = 'en';
 
 function replaceVTT()
 {
@@ -92,7 +92,7 @@ function addButtons(div){
 }
 
 function currentLangScanner(){ //key : Korean, value : ko
-    let target = document.querySelector('#ko');
+    let target = document.querySelector('#' + currentLang);
     target.style.background = 'white';
     setInterval(()=>{
         languages.forEach((value,key)=>{
