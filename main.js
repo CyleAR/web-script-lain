@@ -4,7 +4,7 @@
 // @version      1.03
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
-// @match        https://3d.laingame.net/#/game
+// @match        https://3d.laingame.net/
 // @icon         https://www.google.com/s2/favicons?domain=laingame.net
 // @grant        GM_addStyle
 // ==/UserScript==
