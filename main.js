@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.05
+// @version      1.06
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -10,8 +10,7 @@
 // ==/UserScript==
 
 GM_addStyle ( "@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);" );
-GM_addStyle ( "#subtitle { font-family: Nanum Gothic }" );
-GM_addStyle ( "#subtitle { font-size: 28px !important; }" );
+GM_addStyle ( "#subtitle { font-family: Nanum Gothic; font-size: 28px !important; word-break: keep-all;}" );
 
 const vttLink = 'https://raw.githubusercontent.com/CyleAR/web-script-lain/master/Translations/';
 const clareLink = 'https://raw.githubusercontent.com/nvfclaire/translain/master/Translations/'
