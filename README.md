@@ -16,10 +16,10 @@
 
 ## Screenshots
 <p align="center">
-  <img src="Screenshots/1.png" width="49%">
-  <img src="Screenshots/3.png" width="49%">
-  <img src="Screenshots/4.png" width="49%">
-  <img src="Screenshots/2.png" width="49%">
+  <img src="Screenshots/1.webp" width="49%">
+  <img src="Screenshots/3.webp" width="49%">
+  <img src="Screenshots/4.webp" width="49%">
+  <img src="Screenshots/2.webp" width="49%">
 </p>
 
 ## Credits
