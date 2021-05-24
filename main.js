@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.09
+// @version      1.10
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -114,7 +114,7 @@ function createUI(){
     let UIScanner = setInterval(() => {
         let target = document.querySelector('#root > div.game');
         if(target){
-            target.style.overflow = 'visible';
+            target.style.overflow = 'clip visible';
             clearInterval(UIScanner);
             target.prepend(langDiv);
             addDiv();
