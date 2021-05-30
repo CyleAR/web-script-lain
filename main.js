@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.10
+// @version      1.11
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -41,8 +41,6 @@ function replaceVTT()
     let newVTT = vttLink + currentLang + '/' + trackType + '/' + trackName + '.vtt';
     if(currentLang == 'cl'){
         newVTT = clareLink + currentLang + '/' + trackType + '/' + trackName + '.vtt'; 
-    }else if(!currentLang == 'en'){
-        
     }
     document.querySelector("#track").src = newVTT;
     return;
@@ -81,7 +79,6 @@ function addButtons(div){
                 }else{
                     alert('Language changed into ' + key);
                 }
-               
             };
         }
         addButtons();
