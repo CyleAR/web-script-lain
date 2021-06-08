@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.11
+// @version      1.12
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
