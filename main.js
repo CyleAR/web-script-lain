@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.13
+// @version      1.14
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -106,7 +106,7 @@ function createUI(){
     let addDiv = () =>{
         langDiv.className = 'languages';
         langDiv.style.height = '48px';
-        langDiv.style.width = '720px'
+        langDiv.style.width = '800px'
         langDiv.style.marginTop = '-48px';
     }
     let UIScanner = setInterval(() => {
