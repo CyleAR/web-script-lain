@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.12
+// @version      1.13
 // @description  Make me sad. Make me mad. Make me feel alright?
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -28,6 +28,7 @@ const languages = new Map([
     ['German', 'de'],
     ['Japanese', 'ja'],
     ['Romanian', 'ro'],
+    ['Chinese Simplified', 'zh-CN'],
     ['Clare', 'cl']
 ])
 var currentLang = 'en';
@@ -77,7 +78,7 @@ function addButtons(div){
                 if(value == 'cl'){
                     alert(`Note: This English translation is from Clare's new translation - Translain.\n It's a work in progress and incomplete`);
                 }else{
-                    alert('Language changed into ' + key);
+                    alert('Locale changed into ' + key);
                 }
             };
         }
@@ -124,7 +125,6 @@ function createUI(){
 
 (function() {
     function scanner(){
-        //console.log("F scanner Started");
         let scanInterval = setInterval(() => {
             let target = document.querySelector('#track');
             if(!target){
@@ -136,7 +136,6 @@ function createUI(){
     }
 
     function startFirstScan(){
-        //console.log("F start Started");
         let startScanInterval = setInterval(() => {
             let target = document.querySelector('#track');
             if(target){
