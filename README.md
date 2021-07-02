@@ -1,6 +1,6 @@
 # Info
 **web-script-lain**은 1998년에 출시한 serial experiments lain의 PS1 게임을 웹으로 즐길 수 있게 이식된 [LainTSX](https://laingame.net)를 다국어로 즐기기 위한 유저 스크립트입니다.
-현재 한국어 번역은 85% 가량 완료되었습니다.
+현재 한국어 번역은 90% 가량 완료되었습니다.
 
 **web-script-lain** is an userscript for multilingual support on [LainTSX](https://laingame.net). All translations are from [here](https://crowdin.com/project/lain-psx).
 
