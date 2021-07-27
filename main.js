@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.20
-// @description  Multilanguage support userscript for LainTSX
+// @version      1.21
+// @description  Multilangual support userscript for LainTSX
 // @author       Cyle
 // @match        https://3d.laingame.net/
 // @icon         https://www.google.com/s2/favicons?domain=laingame.net
@@ -34,7 +34,7 @@ const locales = new Map([
 ])
 var currentLang = 'en';
 
-function replaceVTT()
+function replaceVTT() //VTT Files replacer
 {
     //let lang = languageChecker();
     document.querySelector('#media').crossOrigin = 'anonymous';
@@ -48,25 +48,24 @@ function replaceVTT()
     return;
 }
 
-function waitTrackSrc()
+function waitTrackSrc() //Check if #track fully loade and exist
 {
-    //console.log('F waittracksrc started')
     let waitTrack = setInterval(() => {
         let target = document.querySelector('#track');
         try{
             if(!target.src == ''){
                 clearInterval(waitTrack);
-                replaceVTT();
+                replaceVTT();//if #track exist, try replace vtt files
                 return;
             }
         }catch{clearInterval(waitTrack)}
     }, 100);
 }
 
-function addButtons(div){
+function addButtons(div){ //Append button objects to langDiv
     locales.forEach((value, key)=>{
-        let button = document.createElement('button');
-        let addButtons = () => {
+        let button = document.createElement('button'); //Create new button object
+        let newButton = () => { //Property of each button
             button.id = value;
             button.style.background = 'none';
             button.style.border = 'none';
@@ -83,13 +82,13 @@ function addButtons(div){
                 }
             };
         }
-        addButtons();
-        div.appendChild(button);
+        newButton(); //Set button property
+        div.appendChild(button); //Append actual new button on div(langDiv)
     })
     return;
 }
 
-function currentLangScanner(){ //key : Korean, value : ko
+function currentLangScanner(){ //ex) key : Korean, value : ko
     let target = document.querySelector('#' + currentLang);
     target.style.background = 'white';
     setInterval(()=>{
@@ -102,22 +101,22 @@ function currentLangScanner(){ //key : Korean, value : ko
     },500)
 }
 
-function createUI(){ // Add new UI div for locale buttons
+function createUI(){ // Check if game started and fully loaded, then tweak UI for vtt replace
     let langDiv = document.createElement('div');
-    let addDiv = () =>{
+    let newDiv = () =>{ // Property of div(where locale buttons will be created)
         langDiv.className = 'locales';
         langDiv.style.height = '48px';
         langDiv.style.width = '800px'
     }
-    let tweakRootDiv = () =>{
+    let tweakRootDiv = () =>{ //Tweak original lainTSX game UI
         let target = document.querySelector('#root');
         target.style.transform = 'translate(-50%, -50%)';
         target.style.position = 'absolute';
         target.style.top = '50%';
         target.style.left = '50%'
-        target.prepend(langDiv);
+        target.prepend(langDiv); //Append actual new div(langdiv) on root div
     }
-    let UIScanner = setInterval(() => {
+    let UIScanner = setInterval(() => { //Scanner: is original lainTSX Game page fully loaded?
         let target = document.querySelector('#root > div.game');
         if(target){
             clearInterval(UIScanner);
@@ -125,7 +124,7 @@ function createUI(){ // Add new UI div for locale buttons
             target.style.webkitTransform = 'translate(0)';
             target.style.transform = 'translate(0)';
             tweakRootDiv();
-            addDiv();
+            newDiv(); //Set div property
             addButtons(langDiv);
             currentLangScanner();
             return;
@@ -133,7 +132,7 @@ function createUI(){ // Add new UI div for locale buttons
     }, 100);
 }
 
-(function() {
+(function() { //Script Start from here
     function scanner(){
         let scanInterval = setInterval(() => {
             let target = document.querySelector('#track');
