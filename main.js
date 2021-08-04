@@ -32,7 +32,7 @@ const locales = new Map([
     ['Chinese Simplified', 'zh-CN'],
     ['Clare', 'cl']
 ])
-var currentLang = 'en';
+let currentLang = 'en';
 
 function replaceVTT() //VTT Files replacer
 {
@@ -101,7 +101,7 @@ function currentLangScanner(){ //ex) key : Korean, value : ko
     },500)
 }
 
-function createUI(){ // Check if game started and fully loaded, then tweak UI for vtt replace
+function createGameUI(){ // Check if game started and fully loaded, then tweak UI for vtt replace
     let langDiv = document.createElement('div');
     let newDiv = () =>{ // Property of div(where locale buttons will be created)
         langDiv.className = 'locales';
@@ -138,13 +138,13 @@ function createUI(){ // Check if game started and fully loaded, then tweak UI fo
             let target = document.querySelector('#track');
             if(!target){
                 clearInterval(scanInterval);
-                startFirstScan();
+                startTrackScan();
                 return;
             }
         },100 );
     }
 
-    function startFirstScan(){
+    function startTrackScan(){
         let startScanInterval = setInterval(() => {
             let target = document.querySelector('#track');
             if(target){
@@ -153,9 +153,9 @@ function createUI(){ // Check if game started and fully loaded, then tweak UI fo
                 waitTrackSrc(target);
                 return;
             }
-        },100)
+        },100);
     }
-
-    createUI()
-    startFirstScan();
+    
+    createGameUI()
+    startTrackScan();
 })();
