@@ -6,8 +6,8 @@
 
 ## Usage
 1. 확장프로그램을 지원하는 브라우저(chrome, firefox, vivaldi 등)에서 [Tampermonkey](https://www.tampermonkey.net) 설치  
-2. Tampermonkey의 대시보드-도구-Install from URL에 https://raw.githubusercontent.com/CyleAR/web-script-lain/master/main.js 를 입력  
-3. 스크립트 설치 후 [LainTSX](https://laingame.net)에서 원하는 언어를 선택 후 플레이  
+2. Tampermonkey의 대시보드-도구-Install from URL에 https://raw.githubusercontent.com/CyleAR/web-script-lain/master/korean.js 를 입력  
+3. 스크립트 설치 후 [LainTSX](https://laingame.net)에서 상단의 '시작'을 눌러 플레이 시작
 ---
 1. Install [Tampermonkey](https://www.tampermonkey.net) into your web brower  
 2. Move to Dashboard - Utilites - Install from URL  
