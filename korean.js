@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LainScript
 // @namespace    http://cyle.xyz
-// @version      0.01
+// @version      0.03
 // @description  lainTSX 한글패치 전용 스크립트
 // @author       Cyle
 // @match        https://3d.laingame.net/
