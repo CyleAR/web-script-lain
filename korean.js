@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         LainScript
 // @namespace    http://cyle.xyz
-// @version      0.03
+// @version      0.04
 // @description  lainTSX 한글패치 전용 스크립트
 // @author       Cyle
 // @match        https://3d.laingame.net/
@@ -12,7 +12,7 @@
 GM_addStyle ( "@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);" );
 GM_addStyle ( "#subtitle { font-family: Nanum Gothic; font-size: 28px !important; word-break: keep-all;}" );
 
-const Header = `<a href="#/">메인</a><a href="#/notes">노트</a><a href="#/game">게임 시작</a><a href="#/guide">안내서</a><a href="https://discord.com/invite/W22Ga2R">디스코드</a><a href="#/options">옵션</a>`;
+const Header = `<a href="#/">메인</a><a href="#/notes">노트</a><a href="#/game">게임시작</a><a href="#/guide">안내서</a><a href="https://discord.com/invite/W22Ga2R">디스코드</a><a href="#/options">옵션</a>`;
 
 const Header_paragraph = `이 사이트는 다국어 지원을 목적으로 Serial Experiments Lain PSX 게임을 웹으로 재이식 해둔 사이트입니다.<br>게임을 시작하기 전에 잊지 말고 <a href="#/notes">노트</a> 페이지를 읽어보세요.<br><br>`;
 
