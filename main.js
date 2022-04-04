@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Web Script Lain
 // @namespace    http://cyle.xyz
-// @version      1.23
+// @version      1.24
 // @description  Multilangual support userscript for LainTSX
 // @author       Cyle
 // @match        https://3d.laingame.net/
